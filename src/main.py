@@ -1,7 +1,7 @@
-import requests
 import gspread
-import configure
 from oauth2client.service_account import ServiceAccountCredentials
+import requests
+import configure
 
 # Authorize Google Sheets
 scope = ['https://spreadsheets.google.com/feeds',
