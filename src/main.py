@@ -6,7 +6,7 @@ import configure
 # Authorize Google Sheets
 scope = ['https://spreadsheets.google.com/feeds',
          'https://www.googleapis.com/auth/drive']
-credentials = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
+credentials = ServiceAccountCredentials.from_json_keyfile_name(configure.credentials, scope)
 gc = gspread.authorize(credentials)
 
 # Open sheets
