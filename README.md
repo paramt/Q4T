@@ -17,7 +17,6 @@
     - Copy the [Google sheet template](https://docs.google.com/spreadsheets/u/1/d/1BE-ZbrkTejJloU_d953nYCKCqVSfoiQQCZ45Y3NSdtc/copy) and share it with the email address found in `client_email` in the JSON file
 1. Configure options in `configure.py`
     - Set the value of `spreadsheet` to the name of your Google sheet
-    - Set the value of `options` to the number of options you want to give in your quizzes (max 10)
     - Set the value of `channel` to the unique identifier of your chat or username of your channel
 
 ## Usage
