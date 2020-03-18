@@ -20,4 +20,7 @@
     - Set the value of `channel` to the unique identifier of your chat or username of your channel
 
 ## Usage
-You can add as many question/answer sets in your Google sheet as you want. Everytime the script is run, it will send a quiz to the target chat or channel and increment the index in the `index` sheet. You can keep adding more question/answer sets indefinitely, but if you want to reset then delete all previous questions and set the index to `2`.
+You can add as many question/answer sets in your Google sheet as you want. Everytime the script is run, it will send a quiz to the target chat or channel and increment the index in the `index` sheet. You can keep adding more question/answer sets indefinitely.
+
+### Reset
+To reset the spreadsheet, simply run `reset.py`. This will remove all questions and set the index to 2.
