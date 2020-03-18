@@ -5,9 +5,14 @@ import requests
 import configure
 
 # Authorize Google Sheets
-scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-credentials = ServiceAccountCredentials.from_json_keyfile_name(configure.credentials, scope)
-gc = gspread.authorize(credentials)
+try:
+	scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+	credentials = ServiceAccountCredentials.from_json_keyfile_name(configure.credentials, scope)
+	gc = gspread.authorize(credentials)
+except OSError as e:
+	print("JSON file with Google account credentials not found!")
+	print("Make sure you've followed the README instructions and added the filepath of your credentials file to configure.py")
+	exit(1)
 
 # Open sheets
 datasheet = gc.open(configure.spreadsheet).worksheet("datasheet")
