@@ -17,12 +17,13 @@ index_val = index.cell(1, 1).value
 question = datasheet.cell(index_val, 1).value
 options = [datasheet.cell(index_val, i + 2).value for i in range(configure.options)]
 
-# Increment index
-index.update("A1", int(index.cell(1, 1).value) + 1)
-
 url = f"https://api.telegram.org/bot{configure.token}/sendPoll"
 
 query = {"chat_id":f"@{configure.channel}", "question":question, "type":"quiz", "correct_option_id":"0"}
 response = requests.request("GET", url, params = query, json = {"options": options})
 
-print(response.text)
+if response.json()["ok"] == True:
+	# Increment index
+	index.update("A1", int(index.cell(1, 1).value) + 1)
+else:
+	raise Exception("Unable to send Telegram message: " + response.json()["description"])
