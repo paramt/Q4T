@@ -1,7 +1,7 @@
-# Quiz for Telegram
-> Post scheduled quizzes using a list of questions from Google Sheets
+# :pencil: Quiz for Telegram
+> Post scheduled quizzes on Telegram using a list of questions from Google Sheets
 
-## Set up
+## :electric_plug: Set up
 1. Click the <kbd>Use this template</kbd> button on GitHub and create a **private repository**
 1. Create a Telegram bot
     - Follow [these instructions](https://core.telegram.org/bots#creating-a-new-bot) to generate a token
@@ -18,7 +18,9 @@
     - Set the value of `spreadsheet` to the name of your Google sheet
     - Set the value of `channel` to the unique identifier of your chat or username of your channel
 
-## Usage
+##### :warning: Make sure your repository is private, because your Google credentials and Telegram token is sensitive information. 
+
+## :desktop_computer: Usage
 You can add as many question/answer sets in your Google sheet as you want. Everytime the script is run, it will send a quiz to the target chat or channel and increment the index in the `index` sheet. You can keep adding more question/answer sets indefinitely.
 
 ### Run at scheduled interval
@@ -44,8 +46,6 @@ jobs:
     - name: Send quiz
       run: python src/main.py
 ```
-
-Make sure your repository is private, because your Google credentials and Telegram token is sensitive information.
 
 ### Reset
 To reset the spreadsheet, simply run `reset.py`. This will remove all questions and set the index to 2.
