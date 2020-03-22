@@ -14,12 +14,16 @@ except OSError:
 	exit(1)
 
 # Reset index to 2
-gc.open(configure.spreadsheet).worksheet("index").update("A1", 2)
-
-# Open datasheet
-datasheet = gc.open(configure.spreadsheet).worksheet("datasheet")
+def reset_index():
+	gc.open(configure.spreadsheet).worksheet("index").update("A1", 2)
 
 # Reset datasheet
-cells_to_delete = datasheet.range("A2:Z1000")
-for cell in cells_to_delete: cell.value = ""
-datasheet.update_cells(cells_to_delete)
+def reset_datasheet():
+	datasheet = gc.open(configure.spreadsheet).worksheet("datasheet")
+	cells_to_delete = datasheet.range("A2:Z1000")
+	for cell in cells_to_delete: cell.value = ""
+	datasheet.update_cells(cells_to_delete)
+
+if __name__ == "__main__":
+	reset_datasheet()
+	reset_index()
