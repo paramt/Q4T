@@ -12,7 +12,7 @@
     - Navigate to "APIs and Services" > "Credentials"
     - Click <kbd>+ CREATE CREDENTIALS</kbd> and select "Service account"
     - Fill in the required fields, press <kbd>CREATE</kbd>, <kbd>CONTINUE</kbd>, and on the last step click <kbd>+ CREATE KEY</kbd> to download a JSON file
-    - Add the path to the downloaded json file to `configure.py`
+    - Upload the JSON file at the root of your GitHub repo and add the filename to the `credentials` variable in `configure.py`
     - Copy the [Google sheet template](https://docs.google.com/spreadsheets/u/1/d/1BE-ZbrkTejJloU_d953nYCKCqVSfoiQQCZ45Y3NSdtc/copy) and share it with the email address found in `client_email` in the JSON file
 1. Configure options in `configure.py`
     - Set the value of `spreadsheet` to the name of your Google sheet
