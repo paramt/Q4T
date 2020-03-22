@@ -17,6 +17,7 @@
 1. Configure options in `configure.py`
     - Set the value of `spreadsheet` to the name of your Google sheet
     - Set the value of `channel` to the unique identifier of your chat or username of your channel
+    - Optional: set the value of `loop` to `True` or `False` - whether or not the bot should loop through the questions if there are none left
 
 ##### :warning: Make sure your repository is private, because your Google credentials and Telegram token is sensitive information. 
 
