@@ -2,8 +2,7 @@
 > Post scheduled quizzes using a list of questions from Google Sheets
 
 ## Set up
-1. Clone this repo
-1. Install dependencies
+1. Click the <kbd>Use this template</kbd> button on GitHub and create a **private repository**
 1. Create a Telegram bot
     - Follow [these instructions](https://core.telegram.org/bots#creating-a-new-bot) to generate a token
     - Add your token to `configure.py`
