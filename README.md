@@ -22,5 +22,29 @@
 ## Usage
 You can add as many question/answer sets in your Google sheet as you want. Everytime the script is run, it will send a quiz to the target chat or channel and increment the index in the `index` sheet. You can keep adding more question/answer sets indefinitely.
 
+### Run at scheduled interval
+To send quizzes at a certain interval, run `src/main.py` at the specific interval. The recommended way to do this is to use [GitHub Actions](https://github.com/features/actions). Here is a sample workflow you can put in `.github/workflows/main.yml` to send a quiz every day:
+
+```yml
+name: Send quiz
+on:
+  schedule:
+  - cron: '0 0 * * *'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-python@v1
+      with:
+        python-version: '>=3.6'
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Send quiz
+      run: python src/main.py
+```
+
 ### Reset
 To reset the spreadsheet, simply run `reset.py`. This will remove all questions and set the index to 2.
