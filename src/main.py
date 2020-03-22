@@ -3,6 +3,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import requests
 import configure
+import reset
 
 # Authorize Google Sheets
 try:
@@ -21,6 +22,12 @@ index = gc.open(configure.spreadsheet).worksheet("index")
 # Get question and options from current index
 index_val = index.cell(1, 1).value
 question = datasheet.cell(index_val, 1).value
+
+if question == "":
+	reset.reset_index()
+	index_val = index.cell(1, 1).value
+	question = datasheet.cell(index_val, 1).value
+
 options = [datasheet.cell(index_val, i + 2).value for i in range(10)]
 answer = options[0]
 options = [option for option in options if option] # Remove blank questions
