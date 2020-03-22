@@ -46,6 +46,6 @@ response = requests.request("GET", url, params = query, json = {"options": optio
 
 if response.json()["ok"] == True:
 	# Increment index
-	index.update("A1", int(index.cell(1, 1).value) + 1)
+	index.update("A1", int(index_val) + 1)
 else:
 	raise Exception("Unable to send Telegram message: " + response.json()["description"])
