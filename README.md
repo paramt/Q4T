@@ -46,5 +46,7 @@ jobs:
       run: python src/main.py
 ```
 
+Make sure your repository is private, because your Google credentials and Telegram token is sensitive information.
+
 ### Reset
 To reset the spreadsheet, simply run `reset.py`. This will remove all questions and set the index to 2.
