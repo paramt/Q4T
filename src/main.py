@@ -24,9 +24,13 @@ index_val = index.cell(1, 1).value
 question = datasheet.cell(index_val, 1).value
 
 if question == "":
-	reset.reset_index()
-	index_val = index.cell(1, 1).value
-	question = datasheet.cell(index_val, 1).value
+	if configure.loop:
+		reset.reset_index()
+		index_val = index.cell(1, 1).value
+		question = datasheet.cell(index_val, 1).value
+	else:
+		print("No questions found in the Google sheet!")
+		exit(1)
 
 options = [datasheet.cell(index_val, i + 2).value for i in range(10)]
 answer = options[0]
