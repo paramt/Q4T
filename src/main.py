@@ -41,7 +41,7 @@ answer_index = options.index(answer)
 url = f"https://api.telegram.org/bot{config.token}/sendPoll"
 
 query = {"chat_id": f"@{config.channel}", "question": question,
-		 "type":"quiz", "correct_option_id": answer_index}
+		 "type":"quiz", "correct_option_id": answer_index, "is_anonymous": config.anonymous}
 response = requests.request("GET", url, params = query, json = {"options": options})
 
 if response.json()["ok"] == True:

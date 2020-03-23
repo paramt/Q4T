@@ -1,6 +1,7 @@
 # Telegram
-token = ""
-channel = ""
+token = ""			# Telegram bot token
+channel = ""		# Unique identifier of your channel/chat
+anonymous = True	# Whether to keep  responses anonymous
 
 # Google Sheets
 spreadsheet = ""    # Name of Google Sheet
