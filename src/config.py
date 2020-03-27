@@ -1,9 +1,11 @@
-# Telegram
-token = ""			# Telegram bot token
-channel = ""		# Unique identifier of your channel/chat
-anonymous = True	# Whether to keep  responses anonymous
+# Refer to the instructions in the README
 
-# Google Sheets
-spreadsheet = ""    # Name of Google Sheet
-credentials = ""    # Path to credentials JSON file
-loop = True 		# Whether to loop questions
+# Required
+token = ""        # Telegram bot token
+credentials = ""  # Path to credentials JSON file
+spreadsheet = ""  # Name of Google Sheet
+channel = ""      # Unique identifier of your channel/chat
+
+# Optional
+anonymous = True  # Whether to keep  responses anonymous
+loop = True       # Whether to loop questions
