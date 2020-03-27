@@ -15,9 +15,12 @@
     - Upload the JSON file at the root of your GitHub repo and add the filename to the `credentials` variable in `config.py`
     - Copy the [Google sheet template](https://docs.google.com/spreadsheets/u/1/d/1BE-ZbrkTejJloU_d953nYCKCqVSfoiQQCZ45Y3NSdtc/copy) and share it with the email address found in `client_email` in the JSON file
 1. Configure options in `config.py`
-    - Set the value of `spreadsheet` to the name of your Google sheet
-    - Set the value of `channel` to the unique identifier of your chat or username of your channel
-    - Optional: set the value of `loop` to `True` or `False` - whether or not the bot should loop through the questions if there are none left
+    
+| Option | Description | Type | Example |
+| ------ | ----------- | ---- | ------- |
+| `spreadsheet` | **Required** - The name of your Google sheet | String | Q4T Template |
+| `channel` | **Required** - The unique identifier of your chat or the username of your channel | String | q4t_playground |
+| `loop` | Whether of not the bot should loop through the questions if all the questions have been exhausted | Boolean | `True` |
 
 ##### :warning: Make sure your repository is private, because your Google credentials and Telegram token is sensitive information.
 
