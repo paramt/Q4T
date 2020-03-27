@@ -21,6 +21,7 @@
 | `spreadsheet` | **Required** - The name of your Google sheet | String | Q4T Template |
 | `channel` | **Required** - The unique identifier of your chat or the username of your channel | String | q4t_playground |
 | `loop` | Whether of not the bot should loop through the questions if all the questions have been exhausted | Boolean | `True` |
+| `anonymous` | Whether to keep the responses anonymous (Note: this *must* be set to `True` for channels) | Boolean | `True` |
 
 ##### :warning: Make sure your repository is private, because your Google credentials and Telegram token is sensitive information.
 
