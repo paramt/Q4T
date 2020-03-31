@@ -37,9 +37,20 @@ answer = options[0]
 options = [option for option in options if option] # Remove blank questions
 random.shuffle(options)
 answer_index = options.index(answer)
+piclink = datasheet.cell(index_val, 12).value
+caption = datasheet.cell(index_val, 13).value
 
+# Send image if it exists
+if piclink.strip():
+	url = f"https://api.telegram.org/bot{config.token}/sendPhoto"
+	query = {"chat_id": f"@{config.channel}", "photo": piclink, "caption": caption}
+	response = requests.request("GET", url, params = query)
+
+	if response.json()["ok"] == False:
+		raise Exception("Unable to send image: " + response.json()["description"])
+
+# Send poll
 url = f"https://api.telegram.org/bot{config.token}/sendPoll"
-
 query = {"chat_id": f"@{config.channel}", "question": question,
 		 "type":"quiz", "correct_option_id": answer_index, "is_anonymous": config.anonymous}
 response = requests.request("GET", url, params = query, json = {"options": options})
