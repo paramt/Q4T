@@ -26,7 +26,7 @@
 ##### :warning: Make sure your repository is private, because your Google credentials and Telegram token is sensitive information.
 
 ## :desktop_computer: Usage
-You can add as many question/answer sets in your Google sheet as you want. Everytime the script is run, it will send a quiz to the target chat or channel and increment the index in the `index` sheet. You can keep adding more question/answer sets indefinitely.
+You can add as many question/answer sets in your Google sheet as you want. You can also send an image alongside each question by providing the link to the image. The image will be sent immediately before the question. Everytime the script is run, it will send a quiz to the target chat or channel and increment the index in the `index` sheet. You can keep adding more question/answer sets indefinitely.
 
 ### Run at scheduled interval
 To send quizzes at a certain interval, run `src/main.py` at the specific interval. The recommended way to do this is to use [GitHub Actions](https://github.com/features/actions). Here is a sample workflow you can put in `.github/workflows/main.yml` to send a quiz every day:
