@@ -6,6 +6,7 @@
 1. Create a Telegram bot
     - Follow [these instructions](https://core.telegram.org/bots#creating-a-new-bot) to generate a token
     - Add your token to `config.py`
+    - Add the bot to your channel or group and promote it to administrator
 1. Connect to Google Sheets
     - Go to [Google Developer Console](https://console.developers.google.com/apis/dashboard) and create a new project
     - Click <kbd>+ ENABLE APIS AND SERVICES</kbd> and enable the "Drive API" as well as the "Sheets API"
