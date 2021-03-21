@@ -1,4 +1,4 @@
-# :pencil: Quiz for Telegram
+# :pencil: Scheduled Quizzes for Telegram
 > Post scheduled quizzes on Telegram using a list of questions from Google Sheets
 
 ## :electric_plug: Set up
